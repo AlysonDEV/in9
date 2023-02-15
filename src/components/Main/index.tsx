@@ -4,14 +4,25 @@ import ImgIconCompany from "../../assets/icon-company.svg"
 import ImgIconControl from "../../assets/icon-control.svg"
 import ImgIconMoney from "../../assets/icon-money.svg"
 import ImgIconTraining from "../../assets/icon-training.svg"
+import ImgWomanPointer from "../../assets/mulher-apontando.jpg"
 
-import { useEffect } from "react"
-import { RiMailOpenFill, RiWhatsappFill } from 'react-icons/ri'
+import { useEffect, useState } from "react"
 
+import { RiMailOpenFill, RiWhatsappFill } from "react-icons/ri"
 
 
 export function Main() {
-  const [isMobile, setIsMobile] = useEffect<Boolean>(false)
+  const [isMobile, setIsMobile] = useState<boolean>(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
 
   return (
@@ -119,29 +130,49 @@ export function Main() {
           </div>
 
         </article>
-        <div className="grid text-center align-middle bg-woman-pointing bg-contain bg-no-repeat bg-center">
-          <h4 className="text-2xl font-bold" >
-            Agende uma reunião sem compromisso!
-          </h4>
-          <span>
-            FALE CONOSCO
-          </span>
-          <div className="flex flex-col items-center">
-            <a href="tel:+55 85 99847 6785" className="flex items-center gap-1">
-              <span className="border p-1 border-black">
-                <RiWhatsappFill size={12} />
-              </span>
-              +55 85 99847-6785
-            </a>
+        <div
+          className={`flex text-center items-center text-black mx-auto gap-4
+            md:align-middle md:text-white 
+            md:bg-woman-pointing md:bg-contain md:bg-no-repeat md:bg-center'}`
+          }
+        >
 
-            <a href="mailto:in9.gestao@gmail.com" className="flex items-center gap-2">
-              <span className="border p-1 border-black">
-                <RiMailOpenFill size={12} />
+          <div className="md:flex md:flex-col md:justify-between md:h-full">
+            <div className="md:flex md:flex-col gap-6">
+              <h4 className="md:mt-6 md:text-3xl font-bold " >
+                Agende uma reunião sem compromisso!
+              </h4>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="md:text-4xl md:font-bold">
+                FALE CONOSCO
               </span>
-              in9.gestao@gmail.com
-            </a>
+              <a href="tel:+55 85 99847 6785" className="flex items-center gap-1 md:text-xl">
+                <span className="border p-1 border-white">
+                  <RiWhatsappFill size={isMobile ? 12 : 18} />
+                </span>
+                +55 85 99847-6785
+              </a>
 
+              <a href="mailto:in9.gestao@gmail.com" className="flex items-center gap-2 md:text-xl">
+                <span className="border p-1 border-white">
+                  <RiMailOpenFill size={isMobile ? 12 : 18} />
+                </span>
+                in9.gestao@gmail.com
+              </a>
+            </div>
+            <div className="md:h-28">
+              {/* Colocar a imagem do mapa do brasil */}
+            </div>
           </div>
+          {isMobile &&
+            <img
+              src={ImgWomanPointer} alt="Mulher apontando para esquerda"
+              className="h-24"
+            />
+          }
+
+
         </div>
 
       </section>
