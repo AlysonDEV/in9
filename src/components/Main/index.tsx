@@ -4,7 +4,7 @@ import ImgIconCompany from "../../assets/icon-company.svg"
 import ImgIconControl from "../../assets/icon-control.svg"
 import ImgIconMoney from "../../assets/icon-money.svg"
 import ImgIconTraining from "../../assets/icon-training.svg"
-import ImgWomanPointer from "../../assets/mulher-apontando.jpg"
+import ImgWomanPointer from "../../assets/mulher-apontando.webp"
 
 import { useEffect, useState } from "react"
 
@@ -121,7 +121,8 @@ export function Main() {
           <div>
             <h5 className="uppercase text-2xl font-bold" >E NÃO É SÓ ISSO...</h5>
             <div className="flex items-center gap-4">
-              <p className="text-justify">... oferecemos soluções personalizadas em <span className="underline underline-offset-1">CAPACITAÇÃO EMPRESARIAL</span>,
+              <p className="text-justify">
+                ... oferecemos soluções personalizadas em <span className="underline underline-offset-1">CAPACITAÇÃO EMPRESARIAL</span>,
                 focando o desenvolvimento das suas equipes, seja operacional ou liderança,
                 utilizando ferramentas, conceitos, técnicas e habilidades, de modo a
                 atender as demandas estratégicas da companhia.</p>
