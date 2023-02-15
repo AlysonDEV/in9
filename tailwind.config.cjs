@@ -7,7 +7,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'woman-pointing': "url('src/assets/mulher-apontando.webp')"
+        'woman-pointing': "url('./src/assets/mulher-apontando.webp')"
       }
     },
   },
