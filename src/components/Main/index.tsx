@@ -134,8 +134,9 @@ export function Main() {
         <div
           className={`flex text-center items-center text-black mx-auto gap-4
             md:align-middle md:text-white 
-            md:bg-woman-pointing md:bg-contain md:bg-no-repeat md:bg-center'}`
+            md:bg-contain md:bg-no-repeat md:bg-center'}`
           }
+          style={{ backgroundImage: `url(${ImgWomanPointer})` }}
         >
 
           <div className="md:flex md:flex-col md:justify-between md:h-full">
