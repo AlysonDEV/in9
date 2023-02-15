@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.tsx"],
   theme: {
-    extend: {},
+    fontFamily: {
+      'sans': ['Montserrat', 'sans-serif']
+    },
+    extend: {
+      backgroundImage: {
+        'woman-pointing': "url('src/assets/mulher-apontando.jpg')"
+      }
+    },
   },
   plugins: [],
 }
