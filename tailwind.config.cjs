@@ -8,6 +8,14 @@ module.exports = {
     extend: {
       backgroundImage: {
         'woman-pointing': "url('./assets/mulher-apontando.webp')"
+      },
+      colors: {
+        primary: '#3c2946',
+        secondary: {
+          '100': '#f38385',
+          '500': '#eb4347',
+          '800': '#ef343a'
+        }
       }
     },
   },
